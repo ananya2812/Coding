@@ -77,4 +77,79 @@ public class LinkedListImpl<T extends Comparable<T>> implements Cloneable {
     return result;
   }
 
+  /**
+   * Remove duplicates in a sorted list.
+   */
+  public void removeDuplicates() {
+    if (head == null || head.getNext() == null) {
+      return;
+    }
+    Node<T> curr = head;
+    while (curr.getNext() != null) {
+      if (curr.getData().compareTo(curr.getNext().getData()) == 0) {
+        curr.setNext(curr.getNext().getNext());
+      } else {
+        curr = curr.getNext();
+      }
+    }
+  }
+
+  /**
+   * Reverse all the nodes in the linked list so that the last node becomes the first node.
+   */
+  public void reverseList() {
+    if (head == null || head.getNext() == null) {
+      return;
+    } else {
+      Node<T> curr = head;
+      Node<T> prev = null;
+      while (curr != null) {
+        Node<T> newNext = curr.getNext();
+        curr.setNext(prev);
+        prev = curr;
+        curr = newNext;
+      }
+      head = prev;
+    }
+  }
+
+  /**
+   * Create a new sorted list which is the merged from two original sorted lists. Assume the lists
+   * are sorted in ascending order.
+   */
+  public LinkedListImpl<T> sortedMergeList(LinkedListImpl<T> otherList) {
+    if (otherList == null) {
+      return this;
+    } else if (head == null) {
+      return otherList;
+    } else {
+      LinkedListImpl<T> newList = new LinkedListImpl<T>();
+      Node<T> curr1 = otherList.head;
+      Node<T> curr2 = head;
+      while (curr1 != null || curr2 != null) {
+        if (curr2 == null || (curr1 != null && curr1.getData().compareTo(curr2.getData()) < 0)) {
+          newList.addNodes(curr1.getData());
+          curr1 = curr1.getNext();
+        } else {
+          newList.addNodes(curr2.getData());
+          curr2 = curr2.getNext();
+        }
+      }
+
+      return newList;
+    }
+  }
+
+  private void addNodes(T data) {
+    if (head == null) {
+      head = new Node<T>(data);
+    } else {
+      Node<T> lastNode = head;
+      while (lastNode.getNext() != null) {
+        lastNode = lastNode.getNext();
+      }
+      lastNode.setNext(new Node<T>(data));
+    }
+  }
+
 }
