@@ -114,7 +114,7 @@ public class LinkedListImpl<T extends Comparable<T>> implements Cloneable {
   }
 
   /**
-   * Create a new sorted list which is the merged from two original sorted lists. Assume the lists
+   * Create a NEW sorted list which is the merged from two original sorted lists. Assume the lists
    * are sorted in ascending order.
    */
   public LinkedListImpl<T> sortedMergeList(LinkedListImpl<T> otherList) {
