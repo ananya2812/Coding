@@ -2,7 +2,7 @@ package Basic;
 
 public class Stack<T> {
 
-  private static int MAX_SIZE = 4;
+  private static int MAX_SIZE = 40;
   private Element<T> top;
   private int size = 0;
 
