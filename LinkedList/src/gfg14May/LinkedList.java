@@ -1,7 +1,5 @@
 package gfg14May;
 
-import gfg14May.Node;
-
 public class LinkedList<T extends Comparable<T>> {
 
   private Node<T> head = null;
