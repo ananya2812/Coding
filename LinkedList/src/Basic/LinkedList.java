@@ -53,7 +53,7 @@ public class LinkedList<T extends Comparable<T>> implements Cloneable {
       node = node.getNext();
     }
   }
-
+  
   public void deleteLinkedList() {
     head = null;
   }
