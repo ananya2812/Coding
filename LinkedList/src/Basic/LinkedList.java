@@ -4,6 +4,14 @@ public class LinkedList<T extends Comparable<T>> implements Cloneable {
 
   private Node<T> head = null;
 
+  public Node<T> getHead() {
+    return head;
+  }
+
+  public void setHead(Node<T> head) {
+    this.head = head;
+  }
+
   public int countNodes() {
     if (head == null) {
       return 0;
