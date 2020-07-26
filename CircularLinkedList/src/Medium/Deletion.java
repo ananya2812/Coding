@@ -60,7 +60,7 @@ public class Deletion {
       // Case: Node Not found
       if (curr.next == head) {
         System.out.println("Given node is not found" + " in the list!!!");
-        break;
+        return head;
       }
       prev = curr;
       curr = curr.next;
