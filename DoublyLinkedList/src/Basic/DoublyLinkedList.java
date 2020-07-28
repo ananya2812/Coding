@@ -67,4 +67,21 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     }
   }
 
+  public void deleteNode(Node<T> deleteNode) {
+    if (null == head || deleteNode == null) {
+      return;
+    }
+    if (head == deleteNode) {
+      head = head.next;
+      return;
+    }
+
+    if (null != deleteNode.prev) {
+      deleteNode.prev.next = deleteNode.next;
+    }
+    if (null != deleteNode.next) {
+      deleteNode.next.prev = deleteNode.prev;
+    }
+  }
+
 }
