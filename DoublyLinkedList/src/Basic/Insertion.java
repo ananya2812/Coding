@@ -14,9 +14,9 @@ public class Insertion {
     // Insert 4 at the end. So linked list becomes 1->7->6->4->NULL
     dll.append(4);
     // Insert 8, after 7. So linked list becomes 1->7->8->6->4->NULL
-    dll.insertAfter(dll.head.next, 8);
-    dll.insertBefore(dll.head.next, 5);
+    dll.insertAfter(dll.getHead().getNext(), 8);
+    dll.insertBefore(dll.getHead().getNext(), 5);
     System.out.println("Created DLL is: ");
-    dll.printList(dll.head);
+    dll.printList(dll.getHead());
   }
 }

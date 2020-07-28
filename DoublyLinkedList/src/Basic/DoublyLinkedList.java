@@ -2,14 +2,22 @@ package Basic;
 
 public class DoublyLinkedList<T extends Comparable<T>> {
 
-  Node<T> head = null;
+  private Node<T> head = null;
+
+  public Node<T> getHead() {
+    return head;
+  }
+
+  public void setHead(Node<T> head) {
+    this.head = head;
+  }
 
   // Add a node at front
   public void push(T data) {
     Node<T> newNode = new Node<T>(data, null, null);
-    newNode.next = head;
+    newNode.setNext(head);
     if (head != null) {
-      head.prev = newNode;
+      head.setPrev(newNode);
     }
     head = newNode;
   }
@@ -20,10 +28,10 @@ public class DoublyLinkedList<T extends Comparable<T>> {
       System.out.println("Previous Node cannot be null");
       return;
     }
-    Node<T> newNode = new Node<T>(data, prevNode, prevNode.next);
-    prevNode.next = newNode;
-    if (newNode.next != null) {
-      newNode.prev = newNode;
+    Node<T> newNode = new Node<T>(data, prevNode, prevNode.getNext());
+    prevNode.setNext(newNode);
+    if (newNode.getNext() != null) {
+      newNode.setPrev(newNode);
     }
   }
 
@@ -36,12 +44,12 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     }
 
     Node<T> lastNode = head;
-    while (lastNode.next != null) {
-      lastNode = lastNode.next;
+    while (lastNode.getNext() != null) {
+      lastNode = lastNode.getNext();
     }
 
-    lastNode.next = newNode;
-    newNode.prev = lastNode;
+    lastNode.setNext(newNode);
+    newNode.setPrev(lastNode);
   }
 
   // Add a node before a given node
@@ -50,10 +58,10 @@ public class DoublyLinkedList<T extends Comparable<T>> {
       System.out.println("Next Node cannot be null");
       return;
     }
-    Node<T> newNode = new Node<T>(data, nextNode.prev, nextNode);
-    nextNode.prev = newNode;
-    if (null != newNode.prev) {
-      newNode.prev.next = newNode;
+    Node<T> newNode = new Node<T>(data, nextNode.getPrev(), nextNode);
+    nextNode.setPrev(newNode);
+    if (null != newNode.getPrev()) {
+      newNode.getPrev().setNext(newNode);
     } else {
       head = newNode;
     }
@@ -62,8 +70,8 @@ public class DoublyLinkedList<T extends Comparable<T>> {
   public void printList(Node<T> headNode) {
     Node<T> currNode = headNode;
     while (currNode != null) {
-      System.out.println(currNode.data);
-      currNode = currNode.next;
+      System.out.println(currNode.getData());
+      currNode = currNode.getNext();
     }
   }
 
@@ -72,15 +80,15 @@ public class DoublyLinkedList<T extends Comparable<T>> {
       return;
     }
     if (head == deleteNode) {
-      head = head.next;
+      head = head.getNext();
       return;
     }
 
-    if (null != deleteNode.prev) {
-      deleteNode.prev.next = deleteNode.next;
+    if (null != deleteNode.getPrev()) {
+      deleteNode.getPrev().setNext(deleteNode.getNext());
     }
-    if (null != deleteNode.next) {
-      deleteNode.next.prev = deleteNode.prev;
+    if (null != deleteNode.getNext()) {
+      deleteNode.getNext().setPrev(deleteNode.getPrev());
     }
   }
 

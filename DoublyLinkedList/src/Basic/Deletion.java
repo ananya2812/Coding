@@ -19,18 +19,18 @@ public class Deletion {
     dll.push(10);
 
     System.out.println("Created DLL is: ");
-    dll.printList(dll.head);
+    dll.printList(dll.getHead());
 
     // Deleting first node
-    dll.deleteNode(dll.head);
+    dll.deleteNode(dll.getHead());
 
     System.out.println("\nList after deleting first node: ");
-    dll.printList(dll.head);
+    dll.printList(dll.getHead());
 
     // Deleting middle node from 8->4->2
-    dll.deleteNode(dll.head.next);
+    dll.deleteNode(dll.getHead().getNext());
 
     System.out.println("\nList after Deleting middle node: ");
-    dll.printList(dll.head);
+    dll.printList(dll.getHead());
   }
 }
