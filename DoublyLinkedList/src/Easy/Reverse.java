@@ -3,6 +3,9 @@ package Easy;
 import Basic.DoublyLinkedList;
 import Basic.Node;
 
+/*
+ * Reverse a Doubly Linked List
+ */
 public class Reverse {
 
   public static void main(String[] args) {

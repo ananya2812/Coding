@@ -1,5 +1,8 @@
 package Basic;
 
+/*
+ * Delete a node in a Doubly Linked List
+ */
 public class Deletion {
 
   public static void main(String[] args) {
