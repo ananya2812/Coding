@@ -22,7 +22,7 @@ public class DetectLoopInLinkedList {
     Node<Integer> slowPtr = ll.getHead();
     Node<Integer> fastPtr = ll.getHead();
     Boolean flag = false;
-    while (fastPtr != null && slowPtr != null && fastPtr.getNext() != null) {
+    while (fastPtr != null && fastPtr.getNext() != null) {
       slowPtr = slowPtr.getNext();
       fastPtr = fastPtr.getNext().getNext();
       if (fastPtr == slowPtr) {
