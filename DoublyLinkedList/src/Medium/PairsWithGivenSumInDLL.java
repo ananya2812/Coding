@@ -68,7 +68,7 @@ public class PairsWithGivenSumInDLL {
         found = true;
         System.out.println("(" + firstNode.data + ", " + lastNode.data + ")");
         firstNode = firstNode.next;
-        lastNode = lastNode.next;
+        lastNode = lastNode.prev;
       } else {
         if (firstNode.data + lastNode.data < sum) {
           firstNode = firstNode.next;

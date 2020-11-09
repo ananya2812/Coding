@@ -13,7 +13,7 @@ public class CloneLinkedListWithNextAndRandomPointer {
 
   public static void main(String[] args) {
     // Pushing data in the linked list.
-    LinkedList list = new LinkedList(new Node(5));
+    LinkedList list = new LinkedList(5);
     list.push(4);
     list.push(3);
     list.push(2);
@@ -43,8 +43,8 @@ class LinkedList {
 
   Node head;
 
-  LinkedList(Node data) {
-    this.head = data;
+  LinkedList(int data) {
+    this.head = new Node(data);
   }
 
   public void push(int data) {
@@ -109,12 +109,12 @@ class LinkedList {
       cloneCurr = cloneCurr.next;
     }
 
-    return new LinkedList(cloneHead);
+    return new LinkedList(cloneHead.data);
 
   }
 
   public LinkedList clone2() {
-    LinkedList cloneList = new LinkedList(new Node(this.head.data));
+    LinkedList cloneList = new LinkedList(this.head.data);
     Node origListCurr = this.head.next;
 
     Map<Node, Node> origNodeRandomPtrMap = new HashMap<>();
@@ -157,17 +157,18 @@ class LinkedList {
 
     return cloneList;
   }
-}
 
+  class Node {
+    int data;
+    Node next;
+    Node random;
 
-class Node {
-  int data;
-  Node next;
-  Node random;
-
-  Node(int data) {
-    this.data = data;
-    this.next = null;
-    this.random = null;
+    Node(int data) {
+      this.data = data;
+      this.next = null;
+      this.random = null;
+    }
   }
 }
+
+
