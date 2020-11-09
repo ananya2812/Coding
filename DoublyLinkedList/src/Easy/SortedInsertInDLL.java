@@ -64,18 +64,19 @@ public class SortedInsertInDLL {
     newNode.prev = currNode;
     return head;
   }
-}
 
+  // Node of a doubly linked list
+  static class Node {
+    int data;
+    Node next, prev;
 
-// Node of a doubly linked list
-class Node {
-  int data;
-  Node next, prev;
-
-  Node(int data) {
-    this.data = data;
-    this.next = null;
-    this.prev = null;
+    Node(int data) {
+      this.data = data;
+      this.next = null;
+      this.prev = null;
+    }
   }
+
 }
+
 
