@@ -1,11 +1,10 @@
-package Basic;
+package Easy;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import Basic.Stack.StackOverflowException;
-import Basic.Stack.StackUnderflowException;
+import java.util.Stack;
 
 public class MatchParenthesis {
 
@@ -53,10 +52,8 @@ public class MatchParenthesis {
         }
       }
       return processingStack.isEmpty();
-    } catch (StackOverflowException e) {
-      System.out.println("Stack Overflow Exception");
-    } catch (StackUnderflowException e) {
-      System.out.println("Stack Underflow Exception");
+    } catch (Exception e) {
+      System.out.println("Stack Exception");
     }
     return false;
   }

@@ -1,5 +1,6 @@
-package Basic;
+package Easy;
 
+import Basic.Stack;
 import Basic.Stack.StackOverflowException;
 import Basic.Stack.StackUnderflowException;
 
