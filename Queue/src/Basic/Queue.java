@@ -12,7 +12,6 @@ public class Queue<T> {
   private T[] elements;
 
   public static void main(String[] args) throws QueueOverflowException, QueueUnderflowException {
-    MAX_SIZE = 4;
     Queue<Integer> queue = new Queue<>(Integer.class);
 
     System.out.println("Queue full?: " + queue.isFull());
@@ -60,6 +59,7 @@ public class Queue<T> {
     }
   }
 
+  @SuppressWarnings("unchecked")
   public Queue(Class<T> clazz, int size) {
     this.elements = (T[]) Array.newInstance(clazz, size);
   }
