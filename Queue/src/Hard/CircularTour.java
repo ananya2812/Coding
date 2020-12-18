@@ -15,7 +15,9 @@ public class CircularTour {
 
   public static void main(String[] args) {
 
-    PetrolPump[] arr = {new PetrolPump(6, 4), new PetrolPump(3, 6), new PetrolPump(7, 3)};
+    PetrolPump[] arr = {new PetrolPump(6, 4), 
+        new PetrolPump(3, 6), 
+        new PetrolPump(7, 3)};
 
     int start = printTour(arr, arr.length);
 
