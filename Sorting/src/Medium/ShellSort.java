@@ -2,7 +2,6 @@ package Medium;
 
 public class ShellSort {
 
-
   public static void main(String[] args) {
     int arr[] = {10, 5, 2, 1};
     System.out.println("Array Before Sorting");
