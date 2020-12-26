@@ -5,18 +5,11 @@ public class FoldableBinaryTree {
   public static void main(String args[]) {
     BinaryTree tree = new BinaryTree();
 
-    /* 
-    1 
-  /   \ 
- 2     3 
-  \    / 
-   4  5 
-     */
-    tree.root = new Node(1);
-    tree.root.left = new Node(2);
-    tree.root.right = new Node(3);
-    tree.root.right.left = new Node(4);
-    tree.root.left.right = new Node(5);
+    tree.root = new Node<Integer>(1);
+    tree.root.left = new Node<Integer>(2);
+    tree.root.right = new Node<Integer>(3);
+    tree.root.right.left = new Node<Integer>(4);
+    tree.root.left.right = new Node<Integer>(5);
 
     if (tree.IsFoldable(tree.root))
       System.out.println("Tree is Foldable");
@@ -27,10 +20,10 @@ public class FoldableBinaryTree {
 
 
 class BinaryTree {
-  Node root;
+  Node<Integer> root;
 
   /* Returns true if the given tree can be folded */
-  boolean IsFoldable(Node node) {
+  boolean IsFoldable(Node<Integer> node) {
     if (null == node) {
       return true;
     }
@@ -38,7 +31,7 @@ class BinaryTree {
     return isFoldableUtil(node.left, node.right);
   }
 
-  boolean isFoldableUtil(Node n1, Node n2) {
+  boolean isFoldableUtil(Node<Integer> n1, Node<Integer> n2) {
     if (n1 == null && n2 == null) {
       return true;
     }
@@ -52,12 +45,3 @@ class BinaryTree {
 }
 
 
-class Node {
-  int data;
-  Node left, right;
-
-  Node(int item) {
-    data = item;
-    left = right = null;
-  }
-}
