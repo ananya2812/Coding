@@ -2,6 +2,10 @@ package Easy;
 
 import java.util.Stack;
 
+/*
+ * The expression tree is a binary tree in which each internal node corresponds to the operator and
+ * each leaf node corresponds to the operand
+ */
 public class ExpressionTreeConstruction {
 
   public static void main(String args[]) {
