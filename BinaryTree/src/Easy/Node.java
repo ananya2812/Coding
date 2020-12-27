@@ -1,10 +1,10 @@
 package Easy;
 
 public class Node<T> {
-  T data;
-  Node<T> left, right;
+  public T data;
+  public Node<T> left, right;
 
-  Node(T item) {
+  public Node(T item) {
     data = item;
     left = right = null;
   }

@@ -2,6 +2,9 @@ package Hard;
 
 import java.util.Arrays;
 
+/*
+ * Given Inorder and Preorder traversals of a binary tree, print Postorder traversal.
+ */
 public class PrintPostorderFromInorderAndPreorder {
 
   public static void main(String args[]) {
