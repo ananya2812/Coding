@@ -67,7 +67,7 @@ public class BoundaryTraversalOfBinaryTree {
       printRightNodes(node.right);
       System.out.print(node.data + ",");
     } else if (node.left != null) {
-      printRightNodes(node.right);
+      printRightNodes(node.left);
       System.out.print(node.data + ",");
     }
   }
