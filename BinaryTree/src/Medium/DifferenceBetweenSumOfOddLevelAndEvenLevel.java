@@ -1,4 +1,6 @@
-package Easy;
+package Medium;
+
+import Easy.Node;
 
 /*
  * Difference between sums of odd level and even level nodes of a Binary Given a Binary Tree, find
