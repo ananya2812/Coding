@@ -1,3 +1,4 @@
+package Easy;
 /*
  * Date : 2-May-2017 Given an array, cyclically rotate the array clockwise by one.
  * 
