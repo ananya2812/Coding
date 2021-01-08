@@ -32,7 +32,9 @@ public class LowestCommonAncestor2 {
     if (null != leftTree && null != rightTree) {
       return node;
     }
-
+    if (leftTree == null && rightTree == null) {
+      return null;
+    }
     return (leftTree != null) ? leftTree : rightTree;
 
   }
